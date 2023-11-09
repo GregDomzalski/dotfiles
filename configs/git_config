@@ -1,0 +1,23 @@
+[user]
+	name = Greg Domzalski
+	email = greg@gregdom.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPoCy9US9dPMpdoSnEChVDET0trbeWIBl6bXE59CD7x1
+[core]
+	autocrlf = input
+	editor = code --wait
+[diff]
+	tool = default-difftool
+[difftool "default-difftool"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+	tool = code
+[mergetool "code"]
+	cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = "/opt/1Password/op-ssh-sign"
+[commit]
+	gpgsign = true
+[pull]
+	rebase = true

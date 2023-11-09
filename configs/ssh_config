@@ -1,0 +1,19 @@
+Host 10.10.0.*,*.gregdom.net,infosphere.local
+    User greg
+    IdentityFile ~/.ssh/home_infra_auth_key.pub
+    IdentitiesOnly yes
+
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/github_auth_key.pub
+    IdentitiesOnly yes
+
+Host *
+    IdentityAgent ~/.1password/agent.sock
+    StrictHostKeyChecking yes
+    PasswordAuthentication no
+    PubkeyAuthentication yes
+    Protocol 2
+    ForwardAgent no
+    ForwardX11 no
